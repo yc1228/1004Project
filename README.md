@@ -48,4 +48,24 @@ hfs -getmerge unique_value14.out unique_value14_merge.out;
 3. Crime_Column14_24.ipynb reads the merged pyspark output from dumbo, and generate data summary including frequency tables and plots for column 14 to 24. Codes and results can be viewed in the notebook.
 
 
+### part1_ym910
 
+**In folder part1_col2-6, it contains 5 python scripts.**
+
+1. 'Col_2.py','Col_3.py','Col_4.py','Col_5.py','Col_6.py',generate outputs for each column. The output has 6 columns for 3 date-related data, which are values of each column in dataset, base type (INT,time, date ,etc), 3 integers that indicates the year, month and day of each date, and a label from the set['Null','Valid','Invalid']; 5 columns for time-related data, which are values of each column in dataset, base type (INT,TEXT,etc), 2 integers that indicates the hour and minute of each time, and a label from the set['Null','Valid','Invalid'].
+Sample codes used to run scripts using pyspark on dumbo: 
+```
+spark-submit Col_2.py crime.csv
+hfs -getmerge Col_CMPLNT_FR_DT.out col_2_result.out
+```
+
+2. Crime_Column2-6.ipynb reads the merged pyspark output from dumbo, and generate data summary including frequency tables and plots for column 2 to 6. Codes and results can be viewed in the notebook.
+```
+python Plot.py
+```
+
+3. code used to count null in local pyspark
+```
+df=spark.read.csv("/Users/zoem/Documents/DS1004/term_project/data/crime.csv",header=True,mode="DROPMALFORMED")
+null_date=df.filter(df.CMPLNT_FR_DT.isNull()).count()
+```
