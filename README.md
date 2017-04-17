@@ -1,6 +1,6 @@
 # 1004Project
 
-##part1_yc1228
+## part1_yc1228
 
 **In folder part1_yc1228, it contains 10 python scripts.**
 
@@ -25,7 +25,7 @@ Sampe code used to run this script in terminal:
 python Plot.py
 ```
 
-##Part1_Col14_Col24
+## Part1_Col14_Col24
 
 **In folder Part1_Col14_Col24, it contains 11 python scripts and 1 python notebook file.**
 
