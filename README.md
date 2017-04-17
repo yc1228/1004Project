@@ -1,5 +1,7 @@
 # 1004Project
 
+##part1_yc1228
+
 **In folder part1_yc1228, it contains 10 python scripts.**
 
 1. 'Col_CRM_ATPT_CPTD_CD.py','Col_ID.py','Col_JURIS_DESC.py',''Col_KY_CD.py','Col_LAW_CAT_CD.py','Col_OFNS_DESC.py'
@@ -22,6 +24,8 @@ Sampe code used to run this script in terminal:
 ```
 python Plot.py
 ```
+
+##Part1_Col14_Col24
 
 **In folder Part1_Col14_Col24, it contains 11 python scripts and 1 python notebook file.**
 
