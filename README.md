@@ -70,9 +70,9 @@ df=spark.read.csv("/Users/zoem/Documents/DS1004/term_project/data/crime.csv",hea
 null_date=df.filter(df.CMPLNT_FR_DT.isNull()).count()
 ```
 
-### part2_temp_pov
+### part2
 
-**In folder part1_yc1228, it contains 1 python script and 1 MySQL script.**
+**In folder part1_yc1228, it contains 6 python scripts, 1 PySpark script and 1 MySQL script.**
 
 1. 'yc1228_part.py' calculates pearson correlation and p-value between the features that we are interested. It also contains function to plot the relation between these features by using Plotly.
 Sample codes used to run these functions:
@@ -82,5 +82,20 @@ print('578: HARRASSMENT 2:'+str(calc_corr(ct2['Temperature'],ct2['Count'])))
 print('344: ASSAULT 3 & RELATED OFFENSES:'+str(calc_corr(ct3['Temperature'],ct3['Count'])))
 print('109: GRAND LARCENY:'+str(calc_corr(ct4['Temperature'],ct4['Count'])))
 ```
+2. 'Graduation Rate_Crime.ipynb' calculates pearson correlation between the graduation rate and crime count. It also contains Plotly code to visualize the relation between these two features.
 
-2. 'combine_graduation.sql' is one of our MySQL scipts that import two tables into database and merge them based on key.
+3. 'Heavy Drinking Youth_Crime.ipynb' calculates pearson correlation between the heavy drinking rate(youth) rate and crime count. It also contains Plotly code to visualize the relation between these two features.
+
+3. 'Unemployment Rate_Crime.ipynb' calculates pearson correlation between the unemployment rate and crime count. It also contains Plotly code to visualize the relation between these two features.
+
+4. 'Total Crime Pattern by borough.ipynb' contains Plotly code to visualize the time series relation between two features that we are interested by borough.
+
+5.  'Map Visualization.ipynb' creates a map of longitude and latitude.
+
+6. 'combine_graduation.sql' is one of our MySQL scipts that import two tables into database and merge them based on key.
+
+7. 'part2_mapreduce.py' creates five dataframes that we will use in hypothesis testing.
+Sample codes used to run these functions:
+```
+spark-submit part2_mayreduce.py crime.csv
+```
