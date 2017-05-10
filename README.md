@@ -69,3 +69,18 @@ python Plot.py
 df=spark.read.csv("/Users/zoem/Documents/DS1004/term_project/data/crime.csv",header=True,mode="DROPMALFORMED")
 null_date=df.filter(df.CMPLNT_FR_DT.isNull()).count()
 ```
+
+### part2_temp_pov
+
+**In folder part1_yc1228, it contains 1 python script and 1 MySQL script.**
+
+1. 'yc1228_part.py' calculates pearson correlation and p-value between the features that we are interested. It also contains function to plot the relation between these features by using Plotly.
+Sample codes used to run these functions:
+```
+print('341: PETIT LARCENY:'+str(calc_corr(ct1['Temperature'],ct1['Count'])))
+print('578: HARRASSMENT 2:'+str(calc_corr(ct2['Temperature'],ct2['Count'])))
+print('344: ASSAULT 3 & RELATED OFFENSES:'+str(calc_corr(ct3['Temperature'],ct3['Count'])))
+print('109: GRAND LARCENY:'+str(calc_corr(ct4['Temperature'],ct4['Count'])))
+```
+
+2. 'combine_graduation.sql' is one of our MySQL scipts that import two tables into database and merge them based on key.
